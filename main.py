@@ -17,7 +17,7 @@ TGraph = Client(
 
 @TGraph.on_message(filters.command("start"))
 async def start(client, message):
-    await message.reply_text(f"Hello {message.from_user.first_name},\nIm telegram to telegra.ph image uploader bot by @W4RR10R", True)
+    await message.reply_text(f"Hello {message.from_user.first_name},\Im a telegraph uploader bot. I can upload ur medias to telegraph. BOT BY @INDUSBOTS", True)
     
 @TGraph.on_message(filters.photo)
 async def getimage(client, message):

@@ -25,18 +25,22 @@ async def getimage(client, message):
     if not os.path.isdir(tmp):
         os.makedirs(tmp)
     imgdir = tmp + "/" + str(message.message_id) +".jpg"
-    dwn = await message.reply_text("Downloading...", True)          
+    dwn = await message.reply_text("Media downloading by indus telegraph bot...", True)          
     await client.download_media(
             message=message,
             file_name=imgdir
         )
-    await dwn.edit_text("Uploading...")
+    await dwn.edit_text("Uploading media to telegram by indus telegraph bot....")
     try:
         response = upload_file(imgdir)
     except Exception as error:
-        await dwn.edit_text(f"Oops something went wrong\n{error}")
+        await dwn.edit_text(f"Sed....Im facing technical issues....contact @induschats\n{error}")
         return
-    await dwn.edit_text(f"https://telegra.ph{response[0]}")
+    await dwn.edit_text(f"MEDIA UPLOADED
+
+LINK:- https://telegra.ph{response[0]}
+
+UPLOADED BY @INDUS_TELEGRAPHBOT")
     shutil.rmtree(tmp,ignore_errors=True)
 
 
